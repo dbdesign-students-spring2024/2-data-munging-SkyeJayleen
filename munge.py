@@ -1,7 +1,7 @@
 import os
 filepath = os.path.join('data', 'nasadata.txt')
 origfile = open(filepath, 'r', encoding = 'utf-8')
-newfilepath = os.path.join('data', 'mungeddata.csv')
+newfilepath = os.path.join('data', 'clean_data.csv')
 newfile = open(newfilepath, 'w', encoding = 'utf-8')
 
 iterator = 0 # To be used for addressing multiple "Year" rows
@@ -31,3 +31,5 @@ for line in origfile:
                 newfile.write(cleanline(line))
             else: # address non-data descriptive lines.
                 continue
+
+newfile.close()
